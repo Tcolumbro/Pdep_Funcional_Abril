@@ -34,9 +34,21 @@ conduceBien _ _ = False
 --Punto 3
 -- Obtener el nombre de unión de un elemento. Esto se logra añadiendo "uro" al final del nombre, pero solo si el nombre termina en consonante. Si termina en vocal, se busca hasta la última consonante y luego sí, se le concatena "uro". Por ejemplo, el nombre de unión del Flúor es "fluoruro", mientras que el nombre de unión del mercurio es "mercururo".
 
-dropWhile --dice vicky
+--dropWhile --dice vicky
 -- funcion que recibe una condicion y una lista
 
+esVocal :: Char -> Bool
+esVocal 'a' = True --Yo aca puedo hacer una devolucion personalizada Ej; "Hola" ++ otro ++"como vas" --> devuelve "hola otro como vas"
+esVocal 'e' = True --SI O SI, tiene que ser e, porqe si uso E. yo defini con e, por lo que en estecaso no reconoce E
+esVocal 'i' = True
+esVocal 'o' = True
+esVocal 'u' = True
+esVocal letra = False
+
+nombreUnion :: Sustancia -> String
+nombreUnion (Elemento _ nomb _ _) 
+    | (esVocal.last) nomb = (init nomb) ++ "uro"
+    | otherwise =  nomb ++ "uro"
 --Punto 4
 -- Combinar 2 nombres. Al nombre de unión del primero lo concatenamos con el segundo, agregando un "de" entre medio. Por ejemplo, si combino "cloro" y "sodio" debería obtener "cloruro de sodio".
 
