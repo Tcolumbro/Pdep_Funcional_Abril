@@ -52,6 +52,9 @@ nombreUnion (Elemento _ nomb _ _)
 --Punto 4
 -- Combinar 2 nombres. Al nombre de unión del primero lo concatenamos con el segundo, agregando un "de" entre medio. Por ejemplo, si combino "cloro" y "sodio" debería obtener "cloruro de sodio".
 
+combinar2Nombres :: Sustancia -> Sustancia -> String
+combinar2Nombres elementoNomb1 (Elemento _ elementoNomb2 _ _) = (nombreUnion elementoNomb1) ++ " de " ++ elementoNomb2
+
 --Punto 5
 -- Mezclar una serie de componentes entre sí. El resultado de dicha mezcla será un compuesto. Sus componentes serán los componentes mezclados. El nombre se forma de combinar los nombres de la sustancia de cada componente. La especie será, arbitrariamente, un no metal.
 
